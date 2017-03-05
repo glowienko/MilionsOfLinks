@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active"><a [routerLink]="['/']">Home</a></li>
+        <li *ngIf="af.auth | async" role="presentation"><a [routerLink]="['/links']">Links</a></li>
+        <li *ngIf="af.auth | async" role="presentation"><a [routerLink]="['/add/link']">Add link</a></li>
+        <li *ngIf="!(af.auth | async)" role="presentation"><a (click)="login()">Login</a></li>
+        <li *ngIf="af.auth | async" role="presentation"><a (click)="logout()">Logout</a></li>
+
+      </ul>
+    </nav>
+    <h2 class="text-muted title">Milions of Links</h2>
+  </div>
